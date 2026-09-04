@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>A Simple CodePen Example (feat. HTML, CSS, &amp; JavaScript)</title>
+    <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
+<link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- PROCRASTI-NATION -->
+<div id="app">
+
+  <!-- LOGIN SCREEN -->
+  <section id="loginScreen" class="login-screen">
+    <div class="login-glow glow-one"></div>
+    <div class="login-glow glow-two"></div>
+
+    <div class="login-card">
+      <div class="brand-logo">P<span>R</span>O</div>
+
+      <div class="mini-badge">AI PRODUCTIVITY SYSTEM v0.0.1</div>
+
+      <h1>PROCRASTI-<span>NATION</span></h1>
+
+      <p class="login-subtitle">
+        The world's most unnecessary productivity calculator.
+      </p>
+
+      <div class="login-form">
+        <label for="studentName">ENTER YOUR NAME</label>
+
+        <input
+          id="studentName"
+          type="text"
+          placeholder="Your name..."
+          maxlength="30"
+          autocomplete="off"
+        >
+
+        <button id="enterBtn" class="primary-btn">
+          ENTER THE NATION
+          <span>→</span>
+        </button>
+      </div>
+
+      <p class="login-warning">
+        ⚠️ Warning: Productivity may decrease after entering.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- MAIN WEBSITE -->
+  <div id="mainApp" class="hidden">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+      <div class="nav-brand">
+        <div class="brand-mark">P</div>
+        <span>PROCRASTI<span>-NATION</span></span>
+      </div>
+
+      <div class="nav-links">
+        <button class="nav-link active" data-section="home">Home</button>
+        <button class="nav-link" data-section="calculator">Calculator</button>
+        <button class="nav-link" data-section="results">Results</button>
+        <button class="nav-link" data-section="simulator">Simulator</button>
+        <button class="nav-link" data-section="achievements">Achievements</button>
+        <button class="nav-link" data-section="stats">Stats</button>
+      </div>
+
+      <button id="logoutBtn" class="logout-btn">LOG OUT</button>
+    </nav>
+
+
+    <!-- HOME -->
+    <main>
+
+      <section id="home" class="page-section hero-section">
+
+        <div class="hero-background">
+          <div class="orb orb-purple"></div>
+          <div class="orb orb-blue"></div>
+          <div class="orb orb-orange"></div>
+        </div>
+
+        <div class="hero-content">
+
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            SYSTEM ONLINE
+          </div>
+
+          <h2>
+            PROCRASTI-<br>
+            <span>NATION</span>
+            <small>🛋️</small>
+          </h2>
+
+          <p class="hero-tagline">
+            Why do it today when you can calculate exactly
+            how long you can avoid it?
+          </p>
+
+          <p class="hero-description">
+            An advanced artificial intelligence system dedicated
+            to calculating absolutely nothing useful.
+          </p>
+
+          <div class="hero-buttons">
+            <button class="primary-btn big-btn" data-go="calculator">
+              CALCULATE MY PROCRASTINATION 💀
+            </button>
+
+            <button class="secondary-btn big-btn" data-go="stats">
+              SEE HOW USELESS I AM 📊
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <strong id="liveWasted">00:00:00</strong>
+              <span>TIME WASTED TODAY</span>
+            </div>
+
+            <div>
+              <strong>0.3%</strong>
+              <span>SCIENTIFIC ACCURACY</span>
+            </div>
+
+            <div>
+              <strong>100%</strong>
+              <span>EMOTIONAL ACCURACY</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- FUNNY TIMER -->
+        <div class="floating-timer">
+          <div class="timer-top">
+            <span>⏱️ CURRENT PRODUCTIVITY</span>
+            <span class="live-label">LIVE</span>
+          </div>
+
+          <div id="productivityTimer" class="timer-value">
+            00:17
+          </div>
+
+          <div class="timer-bar">
+            <div id="timerProgress"></div>
+          </div>
+
+          <p>
+            You've already wasted this much time on this website.
+          </p>
+        </div>
+
+      </section>
+
+
+      <!-- CALCULATOR -->
+      <section id="calculator" class="page-section calculator-section">
+
+        <div class="section-heading">
+          <div class="section-number">01</div>
+
+          <div>
+            <div class="section-kicker">THE HIGHLY ADVANCED SYSTEM</div>
+            <h3>Let's Calculate Your<br><span>Academic Disaster.</span></h3>
+          </div>
+        </div>
+
+        <div class="calculator-grid">
+
+          <div class="glass-card form-card">
+
+            <div class="form-header">
+              <div class="form-icon">🧠</div>
+
+              <div>
+                <h4>Assignment Intelligence</h4>
+                <p>Enter data. Regret later.</p>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="assignmentName">ASSIGNMENT NAME</label>
+              <input id="assignmentName" type="text" placeholder="e.g. Data Structures">
+            </div>
+
+            <div class="two-columns">
+
+              <div class="input-group">
+                <label for="deadline">DEADLINE</label>
+                <input id="deadline" type="datetime-local">
+              </div>
+
+              <div class="input-group">
+                <label for="workHours">WORK REQUIRED</label>
+                <div class="input-with-unit">
+                  <input id="workHours" type="number" min="0.5" max="500" step="0.5" value="6">
+                  <span>HOURS</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="input-group">
+
+              <div class="label-row">
+                <label for="motivation">CURRENT MOTIVATION</label>
+                <strong id="motivationValue">23%</strong>
+              </div>
+
+              <input
+                id="motivation"
+                class="range-input"
+                type="range"
+                min="0"
+                max="100"
+                value="23"
+              >
+
+              <div class="range-labels">
+                <span>🫠 Dead inside</span>
+                <span>😎 Extremely suspicious</span>
+              </div>
+
+            </div>
+
+            <div class="two-columns">
+
+              <div class="input-group">
+                <label for="laterCount">"I'LL START LATER" COUNT</label>
+                <input id="laterCount" type="number" min="0" max="1000" value="3">
+              </div>
+
+              <div class="input-group">
+                <label for="chapters">CHAPTERS REMAINING</label>
+                <input id="chapters" type="number" min="0" max="500" value="6">
+              </div>
+
+            </div>
+
+            <div class="input-group">
+              <label for="distraction">MAIN DISTRACTION</label>
+
+              <select id="distraction">
+                <option value="Instagram">📱 Instagram</option>
+                <option value="YouTube">🎬 YouTube</option>
+                <option value="Gaming">🎮 Gaming</option>
+                <option value="Food">🍕 Food</option>
+                <option value="Sleeping">😴 Sleeping</option>
+                <option value="Cleaning">🧹 Suddenly cleaning</option>
+                <option value="Everything">🌪️ Literally everything</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <label for="currentTime">CURRENT TIME</label>
+              <input id="currentTime" type="datetime-local">
+            </div>
+
+            <button id="calculateBtn" class="calculate-btn">
+              <span>CALCULATE MY DISASTER</span>
+              <strong>💀</strong>
+            </button>
+
+          </div>
+
+
+          <!-- CALCULATOR SIDE PANEL -->
+          <div class="glass-card prediction-card">
+
+            <div class="prediction-header">
+              <span>PROCRASTINATION ENGINE</span>
+              <span class="engine-dot"></span>
+            </div>
+
+            <div class="fake-ai">
+              <div class="ai-circle">P</div>
+
+              <div>
+                <strong>P.R.O.C.R.A.S.T.I.N.A.T.E</strong>
+
+                <p>
+                  Predictive Resource Optimization & Calculation
+                  for Ridiculously Avoiding Study Tasks In Nearly
+                  All Time Emergencies
+                </p>
+              </div>
+            </div>
+
+            <div class="analysis-lines">
+
+              <div>
+                <span>AI CONFIDENCE</span>
+                <strong>94.7%</strong>
+              </div>
+
+              <div>
+                <span>SCIENTIFIC ACCURACY</span>
+                <strong>0.3%</strong>
+              </div>
+
+              <div>
+                <span>EMOTIONAL ACCURACY</span>
+                <strong>100%</strong>
+              </div>
+
+            </div>
+
+            <div class="quote-box">
+              <span>AI SAYS:</span>
+
+              <p>
+                "Your productivity has been detected.
+                Unfortunately, it is hiding."
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- RESULTS -->
+      <section id="results" class="page-section results-section">
+
+        <div class="section-heading">
+          <div class="section-number">02</div>
+
+          <div>
+            <div class="section-kicker">DIAGNOSTIC COMPLETE</div>
+            <h3>Your Academic<br><span>Disaster Report.</span></h3>
+          </div>
+        </div>
+
+
+        <div id="resultEmpty" class="empty-results glass-card">
+          <div>🧮</div>
+          <h4>No disaster calculated yet.</h4>
+          <p>
+            Enter your assignment information first.
+            We promise to make the situation worse.
+          </p>
+
+          <button class="primary-btn" data-go="calculator">
+            OPEN CALCULATOR
+          </button>
+        </div>
+
+
+        <div id="resultContent" class="hidden">
+
+          <div class="results-top-grid">
+
+            <div class="glass-card panic-card">
+
+              <div class="panic-heading">
+                <span>PANIC METER</span>
+                <span>🔥</span>
+              </div>
+
+              <div class="panic-number">
+                <span id="panicValue">0</span><small>%</small>
+              </div>
+
+              <div class="panic-track">
+                <div id="panicBar"></div>
+              </div>
+
+              <div id="panicStatus" class="panic-status">
+                ACADEMIC EMERGENCY
+              </div>
+
+              <p id="panicQuote">
+                You are no longer studying for the assignment.
+                You are studying for survival.
+              </p>
+
+            </div>
+
+
+            <div class="glass-card score-card">
+
+              <div class="score-title">
+                PROCRASTINATION SCORE
+              </div>
+
+              <div class="score-ring">
+                <svg viewBox="0 0 140 140">
+                  <circle class="ring-bg" cx="70" cy="70" r="58"></circle>
+                  <circle
+                    id="scoreCircle"
+                    class="ring-progress"
+                    cx="70"
+                    cy="70"
+                    r="58"
+                  ></circle>
+                </svg>
+
+                <div class="score-center">
+                  <strong id="scoreValue">0</strong>
+                  <span>/100</span>
+                </div>
+              </div>
+
+              <div id="scoreLevel" class="score-level">
+                🐣 Beginner Procrastinator
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- METRICS -->
+          <div class="metric-grid">
+
+            <div class="metric-card">
+              <span>⏳</span>
+              <small>TIME REMAINING</small>
+              <strong id="timeRemaining">0h 0m</strong>
+            </div>
+
+            <div class="metric-card">
+              <span>⚡</span>
+              <small>PRODUCTIVE HOURS</small>
+              <strong id="productiveHours">0h</strong>
+            </div>
+
+            <div class="metric-card">
+              <span>📱</span>
+              <small>SCROLLING TIME</small>
+              <strong id="scrollingTime">0h</strong>
+            </div>
+
+            <div class="metric-card">
+              <span>🍜</span>
+              <small>FOOD BREAKS</small>
+              <strong id="foodTime">0h</strong>
+            </div>
+
+            <div class="metric-card">
+              <span>🧠</span>
+              <small>SCREEN STARE</small>
+              <strong id="stareTime">0m</strong>
+            </div>
+
+            <div class="metric-card">
+              <span>😴</span>
+              <small>SLEEPING</small>
+              <strong id="sleepTime">0h</strong>
+            </div>
+
+            <div class="metric-card">
+              <span>🚶</span>
+              <small>RANDOM ACTIVITIES</small>
+              <strong id="randomTime">0m</strong>
+            </div>
+
+            <div class="metric-card">
+              <span>☕</span>
+              <small>COFFEE REQUIRED</small>
+              <strong id="coffeeTime">∞</strong>
+            </div>
+
+          </div>
+
+
+          <!-- AI ANALYSIS -->
+          <div class="glass-card ai-result-card">
+
+            <div class="ai-result-icon">🤖</div>
+
+            <div>
+              <span>PROCRASTI-NATION AI ANALYSIS</span>
+
+              <h4 id="aiMessage">
+                You had time. You chose chaos.
+              </h4>
+
+              <p id="aiSubMessage">
+                Our highly questionable algorithm has reached
+                a conclusion.
+              </p>
+            </div>
+
+          </div>
+
+
+          <!-- TIMELINE -->
+          <div class="glass-card timeline-card">
+
+            <div class="card-title-row">
+              <div>
+                <span class="section-kicker">PREDICTED FUTURE</span>
+                <h4>Procrastination Timeline</h4>
+              </div>
+
+              <span class="timeline-badge">⚠️ 97% ACCURATE</span>
+            </div>
+
+            <div id="timeline" class="timeline"></div>
+
+          </div>
+
+
+          <!-- EXCUSE GENERATOR -->
+          <div class="glass-card excuse-card">
+
+            <div class="excuse-content">
+              <div class="excuse-emoji">🤡</div>
+
+              <div>
+                <span>EMERGENCY EXCUSE GENERATOR</span>
+
+                <h4 id="excuseText">
+                  Click the button. Your dignity has already left.
+                </h4>
+              </div>
+            </div>
+
+            <button id="excuseBtn" class="secondary-btn">
+              GENERATE EXCUSE 🤡
+            </button>
+
+          </div>
+
+
+          <!-- CERTIFICATE -->
+          <div class="certificate">
+
+            <div class="certificate-stars">✦ ✦ ✦</div>
+
+            <div class="certificate-icon">🏅</div>
+
+            <div class="certificate-label">
+              OFFICIAL CERTIFICATION
+            </div>
+
+            <h3>CERTIFIED<br><span>PROCRASTINATOR</span></h3>
+
+            <p>
+              This certifies that
+              <strong id="certificateName">Student</strong>
+            </p>
+
+            <p>
+              successfully wasted
+              <strong id="certificateWasted">0 hours</strong>
+              while having
+              <strong id="certificateAvailable">0 hours</strong>
+              available.
+            </p>
+
+            <div class="certificate-score">
+              <span>PROCRASTINATION EFFICIENCY</span>
+              <strong id="certificateEfficiency">0%</strong>
+            </div>
+
+            <p class="certificate-quote">
+              "Why do today what you can panic about tomorrow?"
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SIMULATOR -->
+      <section id="simulator" class="page-section simulator-section">
+
+        <div class="section-heading">
+          <div class="section-number">03</div>
+
+          <div>
+            <div class="section-kicker">INTERACTIVE EXPERIMENT</div>
+            <h3>Procrastination<br><span>Simulator.</span></h3>
+          </div>
+        </div>
+
+        <div class="glass-card simulator-card">
+
+          <div id="simStart">
+
+            <div class="sim-icon">💻</div>
+
+            <h4>You are about to start your assignment.</h4>
+
+            <p>
+              You have finally opened the document.
+              Your cursor is blinking.
+              What happens next?
+            </p>
+
+            <button id="startSimulation" class="primary-btn big-btn">
+              START ASSIGNMENT
+            </button>
+
+          </div>
+
+
+          <div id="simGame" class="hidden">
+
+            <div class="sim-top">
+
+              <div>
+                <span>PROCRASTINATION LEVEL</span>
+
+                <strong>
+                  <span id="simCounter">0</span> MINUTES
+                </strong>
+              </div>
+
+              <div class="mini-panic">
+                PANIC <strong id="simPanic">0%</strong>
+              </div>
+
+            </div>
+
+            <h4 id="simQuestion">
+              Your phone just buzzed. What do you do?
+            </h4>
+
+            <div id="simChoices" class="sim-choices">
+
+              <button class="sim-choice" data-minutes="3">
+                📱 Check notifications
+              </button>
+
+              <button class="sim-choice" data-minutes="7">
+                🎬 Watch one short video
+              </button>
+
+              <button class="sim-choice" data-minutes="5">
+                🍪 Get a snack
+              </button>
+
+              <button class="sim-choice" data-minutes="8">
+                🧹 Rearrange your desktop
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div id="simEnd" class="hidden">
+
+            <div class="sim-end-icon">💀</div>
+
+            <h4>CONGRATULATIONS!</h4>
+
+            <p id="simResult">
+              You procrastinated for 27 minutes while using
+              a procrastination website.
+            </p>
+
+            <button id="restartSimulation" class="secondary-btn">
+              PROCRASTINATE AGAIN
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ACHIEVEMENTS -->
+      <section id="achievements" class="page-section achievements-section">
+
+        <div class="section-heading">
+          <div class="section-number">04</div>
+
+          <div>
+            <div class="section-kicker">YOUR COMPLETELY UNNECESSARY AWARDS</div>
+            <h3>Achievements<br><span>Unlocked.</span></h3>
+          </div>
+        </div>
+
+        <div class="achievement-grid">
+
+          <div class="achievement-card unlocked">
+            <div class="achievement-icon">🏆</div>
+            <div>
+              <h4>First Procrastination</h4>
+              <p>Congratulations. You did absolutely nothing.</p>
+            </div>
+            <span class="unlock">UNLOCKED</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🛋️</div>
+            <div>
+              <h4>Professional Waster</h4>
+              <p>Waste more than 5 hours.</p>
+            </div>
+            <span class="lock">🔒</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">💘</div>
+            <div>
+              <h4>Deadline Romantic</h4>
+              <p>Wait until the deadline becomes emotionally close.</p>
+            </div>
+            <span class="lock">🔒</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🏃</div>
+            <div>
+              <h4>Last-Minute Legend</h4>
+              <p>Submit within the final 10 minutes.</p>
+            </div>
+            <span class="lock">🔒</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🤸</div>
+            <div>
+              <h4>Academic Acrobat</h4>
+              <p>Successfully avoid studying in 7 different ways.</p>
+            </div>
+            <span class="lock">🔒</span>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🗿</div>
+            <div>
+              <h4>Legendary Procrastinator</h4>
+              <p>Reach a procrastination score of 95+.</p>
+            </div>
+            <span class="lock">🔒</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- STATS -->
+      <section id="stats" class="page-section stats-section">
+
+        <div class="section-heading">
+          <div class="section-number">05</div>
+
+          <div>
+            <div class="section-kicker">TOTALLY IMPORTANT ANALYTICS</div>
+            <h3>Your Personal<br><span>Uselessness.</span></h3>
+          </div>
+        </div>
+
+
+        <div class="stats-grid">
+
+          <div class="stat-big glass-card">
+            <span>⏰</span>
+            <small>TOTAL TIME WASTED</small>
+            <strong id="totalWasted">0m</strong>
+          </div>
+
+          <div class="stat-big glass-card">
+            <span>📚</span>
+            <small>ASSIGNMENTS DELAYED</small>
+            <strong id="assignmentsDelayed">0</strong>
+          </div>
+
+          <div class="stat-big glass-card">
+            <span>🧠</span>
+            <small>AVERAGE SCORE</small>
+            <strong id="averageScore">0</strong>
+          </div>
+
+          <div class="stat-big glass-card">
+            <span>📱</span>
+            <small>MOST COMMON DISTRACTION</small>
+            <strong id="commonDistraction">None</strong>
+          </div>
+
+        </div>
+
+
+        <div class="glass-card dashboard-card">
+
+          <div class="card-title-row">
+            <div>
+              <span class="section-kicker">PERFORMANCE REPORT</span>
+              <h4>Productivity Analytics</h4>
+            </div>
+
+            <span class="fake-live">● LIVE DATA</span>
+          </div>
+
+          <div class="bar-chart">
+
+            <div class="chart-column">
+              <div class="chart-value" style="height: 25%"></div>
+              <span>MON</span>
+            </div>
+
+            <div class="chart-column">
+              <div class="chart-value" style="height: 42%"></div>
+              <span>TUE</span>
+            </div>
+
+            <div class="chart-column">
+              <div class="chart-value" style="height: 34%"></div>
+              <span>WED</span>
+            </div>
+
+            <div class="chart-column">
+              <div class="chart-value" style="height: 68%"></div>
+              <span>THU</span>
+            </div>
+
+            <div class="chart-column">
+              <div class="chart-value" style="height: 82%"></div>
+              <span>FRI</span>
+            </div>
+
+            <div class="chart-column">
+              <div class="chart-value" style="height: 55%"></div>
+              <span>SAT</span>
+            </div>
+
+            <div class="chart-column">
+              <div class="chart-value" style="height: 91%"></div>
+              <span>SUN</span>
+            </div>
+
+          </div>
+
+          <div class="chart-caption">
+            <span>LESS PROCRASTINATION</span>
+            <span>MORE CHAOS →</span>
+          </div>
+
+        </div>
+
+
+        <div class="glass-card record-card">
+
+          <div class="record-icon">👑</div>
+
+          <div>
+            <span>PERSONAL RECORD</span>
+            <h4 id="personalRecord">No record yet.</h4>
+            <p>
+              Your greatest achievement is currently
+              not achieving anything.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- START WORKING -->
+    <button id="startWorking" class="start-working">
+      <span class="pulse-dot"></span>
+      START WORKING
+    </button>
+
+
+    <!-- TOAST -->
+    <div id="toast" class="toast">
+      <span>⚡</span>
+      <p id="toastText">Excellent decision.</p>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+      <div class="footer-brand">
+        Procrasti-Nation™
+      </div>
+
+      <p>
+        Saving students from productivity since absolutely never.
+      </p>
+
+      <div class="footer-links">
+        <button data-go="home">Home</button>
+        <button data-go="calculator">Calculator</button>
+        <button data-go="achievements">Achievements</button>
+        <button data-go="stats">Stats</button>
+      </div>
+
+      <div class="disclaimer">
+        ⚠️ This website has no scientific value whatsoever.
+      </div>
+
+    </footer>
+
+  </div>
+
+</div>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>
